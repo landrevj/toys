@@ -8,6 +8,8 @@ A simple implementation of Conway's Game of Life made using SDL2.
 ## Dependencies
 - [SDL2](https://www.libsdl.org/download-2.0.php)
 - Some C++ compiler. (The included makefile uses g++.)
+- Linux
+    * There is a windows version of SDL2 so a port wouldn't take more than like 20 minutes. You'd just have to change a few things then compile with mingw as I use the getopt library. Also take out the color formatting stuff otherwise you won't get terminal output in CMD.
 
 ## Keybinds
 * q
