@@ -3,7 +3,7 @@
 /**
  * The default constructor for the timer class.
  */
-timer::timer() : start_ticks( 0 ), paused_ticks( 0 ), paused( 0 ) {}
+timer::timer() : start_ticks( 0 ), paused_ticks( 0 ), started(false), paused( false ) {}
 
 /**
  * Either starts the timer or resets it if it has already been started.

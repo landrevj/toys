@@ -22,12 +22,14 @@ game::game()
  */
 game::game( SDL_Renderer* r, game_options g ) :
 	renderer( r ),
-	board( ::board( g.rows, g.cols, g.node_width, g.flags.grid_on ) ), timer( ::timer() ),
+	board( ::board( g.rows, g.cols, g.node_width, g.flags.grid_on ) ),
+	timer( ::timer() ),
 	current_ups( g.init_ups ),
 	opts( g ),
-	mouse_coords({{1,0},{0,0}})
+	mouse_coords( {{1, 0}, {0, 0}} )
 {
 	if ( g.flags.file_board ) board = g.load_board;
+	timer.start();
 }
 
 /**
@@ -46,21 +48,22 @@ void game::run ()
 	while ( !quit )
 	{
 		update_mouse_pos();
-		
+
 		// check for input events
-		while ( SDL_PollEvent( &e ) ) handle_keybinds( e, quit );
+		while ( SDL_PollEvent( &e ) )
+			handle_keybinds( e, quit );
 
 		// clear the screen to the color based on if it is paused
 		if ( timer.is_paused() ) SDL_SetRenderDrawColor( renderer, opts.paused_bg.r, opts.paused_bg.g, opts.paused_bg.b, opts.paused_bg.a );
 		else SDL_SetRenderDrawColor( renderer, opts.default_bg.r, opts.default_bg.g, opts.default_bg.b, opts.default_bg.a );
 		SDL_RenderClear( renderer );
-		
+
 		// add the live nodes
 		board.render( renderer, opts.node_fg, opts.cursor_fg, opts.grid, opts.shadow );
-		
+
 		// update what the user can see
 		SDL_RenderPresent( renderer );
-		
+
 		// update the board if unpaused and the time since last update is over the updates per second time
 		if ( !timer.is_paused() && ( timer.get_ticks() >= ( 1000.f / current_ups ) ) )
 		{
@@ -68,7 +71,7 @@ void game::run ()
 			// reset the time until next update
 			timer.start();
 		}
-		
+
 		// log some stuff to the console
 		log();
 	}
