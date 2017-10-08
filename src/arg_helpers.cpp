@@ -14,7 +14,7 @@
  */
 unsigned int is_positive_int ( const char a[] )
 {
-	for ( int i = 0; i < std::strlen( a ); i++ )
+	for ( int i = 0; i < strlen( a ); i++ )
 	{
 		if ( a[i] < '0' || a[i] > '9' )
 			return 0;
@@ -223,7 +223,7 @@ void parse_line ( const std::string& line, std::string results[2] )
 void set_options_from_file ( game_options& go, std::unordered_map<std::string, std::string>& options )
 {
 	// holy fuck this thing is ugly
-	for ( std::unordered_map<std::string, std::string>::iterator it = options.begin(); it != options.end(); it++ )
+	for ( std::unordered_map<std::string, std::string>::iterator it = options.begin(); it != options.end(); ++it )
 	{
 		if ( it->first == "rows" )       { go.rows       = std::stoi( options["rows"] );       go.flags.rows = true; }
 		if ( it->first == "cols" )       { go.cols       = std::stoi( options["cols"] );       go.flags.cols = true; }
