@@ -1,0 +1,18 @@
+[variables]
+# must be ints > 0
+rows = 50
+cols = 50
+node_width = 10
+init_ups = 10
+# must be bools (either 0 or 1)
+grid_on = 0
+verbose = 0
+
+# must be in hexadecimal rgba (i.e. 0xRRGGBBAA)
+[colors]
+node_fg    = 0x5c719eff
+cursor_fg  = 0x748bb1ff
+grid       = 0x313c4eff
+shadow     = 0x313c4eff
+default_bg = 0x2F343Fff
+paused_bg  = 0x252932ff
