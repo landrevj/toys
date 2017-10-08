@@ -244,16 +244,13 @@ void game::to_file ()
 	filename += std::to_string( opts.rows ) + "x" + std::to_string( opts.cols ) + "-" + std::to_string( time( NULL ) ) + ".txt";
 	std::ofstream out( filename, std::ofstream::out | std::ofstream::trunc );
 	out << "[variables]\n"
-	    << "# must be ints > 0\n"
 	    << "rows = "       << opts.rows       << "\n"
 	    << "cols = "       << opts.cols       << "\n"
 	    << "node_width = " << opts.node_width << "\n"
 	    << "init_ups = "   << opts.init_ups   << "\n"
-	    << "# must be bools (0 or 1)\n"
 	    << "grid_on = "    << opts.flags.grid_on << "\n"
 	    << "verbose = "    << opts.flags.verbose << "\n"
 	    << "\n"
-	    << "# must be in hexadecimal rgba (i.e. 0xRRGGBBAA)\n"
 	    << "[colors]\n"
 	    << "node_fg    = 0x" << Uint32_to_hex_string( SDL_Color_to_Uint32( opts.node_fg ) ) << "\n"
 	    << "cursor_fg  = 0x" << Uint32_to_hex_string( SDL_Color_to_Uint32( opts.cursor_fg ) ) << "\n"
@@ -262,9 +259,6 @@ void game::to_file ()
 	    << "default_bg = 0x" << Uint32_to_hex_string( SDL_Color_to_Uint32( opts.default_bg ) ) << "\n"
 	    << "paused_bg  = 0x" << Uint32_to_hex_string( SDL_Color_to_Uint32( opts.paused_bg ) ) << "\n"
 	    << "\n"
-	    << "#########################\n"
-	    << "# NO TEXT AFTER [board] #\n"
-	    << "#########################\n"
 	    << "[board]"
 	    << std::endl;
 	for ( int i = 0; i < board.get_rows(); i++ )
