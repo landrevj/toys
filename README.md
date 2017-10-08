@@ -3,7 +3,7 @@ A simple implementation of Conway's Game of Life made using SDL2.
 
 
 ## Screenshots
-(coming soon)
+![example imgages](https://user-images.githubusercontent.com/9067294/31314190-bad7fdae-abae-11e7-9050-c858136261bf.png)
 
 ## Dependencies
 - [SDL2](https://www.libsdl.org/download-2.0.php)
@@ -75,7 +75,7 @@ paused_bg  = 0x252932ff
 # if the line is shorter than the width of the board then it will just fill the empty space with 0's
 # so you can save yourself some trouble and just use newlines instead of rows with just 0's in it.
 
-# this is a square. dont let monospace fonts trick you
+# this is a square. dont let the shape trick you
 [board]
 11111111111111
 10000000000001
