@@ -92,3 +92,4 @@ paused_bg  = 0x252932ff
 10000000000001
 11111111111111
 ```
+By default the program looks for "./config" to load options from, then any file specified in the command line arguments. To change where the program looks for a config, edit the path on [this line](https://github.com/landrevj/life-sdl/blob/7a73868b0f589797aa33456c66b1fcdf02597e60/src/main.cpp#L28) before compilation.
