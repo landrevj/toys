@@ -222,7 +222,7 @@ void parse_line ( const std::string& line, std::string results[2] )
  */
 void set_options_from_file ( game_options& go, std::unordered_map<std::string, std::string>& options )
 {
-	// holy fuck this thing is ugly
+	// man this thing is ugly
 	for ( std::unordered_map<std::string, std::string>::iterator it = options.begin(); it != options.end(); ++it )
 	{
 		if ( it->first == "rows" )       { go.rows       = std::stoi( options["rows"] );       go.flags.rows = true; }
