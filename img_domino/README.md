@@ -5,7 +5,7 @@ Should probably be called img_braille instead but here we are.
 ```img_domino image_path target_height effect_cutoff invert_output```
 
 * ```image_path``` - string - path to input image. (currently only images with only 3 channels until I fix that.)
-* ```target_height``` - uint - dot height of the output text. (multiply by 4 to get how many rows of text it will be.)
+* ```target_height``` - uint - dot height of the output text. (divide by 4 to get how many rows of text it will be.)
 * ```effect_cutoff``` - 0-255 - this allows you to tune the threshold for which pixels become the foreground and which become the background. (140 seems to be a good starting point.)
 * ```invert_output``` - 0 or 1 - lets you invert which pixels get dots and which dont.
 
