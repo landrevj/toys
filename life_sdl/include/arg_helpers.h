@@ -2,6 +2,7 @@
 #define ARG_HELPERS
 
 #include <unordered_map>
+#include <string>
 #include "game.h"
 
 void handle_args ( game_options&, int, char* const* );
